@@ -2,7 +2,8 @@ package com.rafaelcosta.carteirinhadigital2devest_b.feature.login.data.repositor
 import com.rafaelcosta.carteirinhadigital2devest_b.feature.login.data.remote.dto.ErrorResponseDto
 import com.rafaelcosta.carteirinhadigital2devest_b.feature.login.data.remote.dto.LoginRequestDto
 import com.rafaelcosta.carteirinhadigital2devest_b.feature.login.data.remote.service.AuthApi
-import com.rafaelcosta.carteirinhadigital2devest_b.feature.login.domain.model.UsuarioLogado
+import com.rafaelcosta.carteirinhadigital2devest_b.feature.login.domain.model.model.UsuarioLogado
+import com.rafaelcosta.carteirinhadigital2devest_b.feature.login.domain.model.repository.LoginRepository
 import kotlinx.serialization.json.Json
 import retrofit2.HttpException
 import java.io.IOException

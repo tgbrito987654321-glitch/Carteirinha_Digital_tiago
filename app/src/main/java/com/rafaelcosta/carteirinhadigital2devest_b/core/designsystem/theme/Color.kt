@@ -1,4 +1,6 @@
 package com.rafaelcosta.carteirinhadigital2devest_b.core.designsystem.theme
+
+import androidx.compose.ui.graphics.BlendMode.Companion.Color
 import androidx.compose.ui.graphics.Color
 
 val primaryLight = Color(0xFF4C662B)
@@ -216,10 +218,3 @@ val surfaceContainerLowDarkHighContrast = Color(0xFF1E201A)
 val surfaceContainerDarkHighContrast = Color(0xFF2F312A)
 val surfaceContainerHighDarkHighContrast = Color(0xFF3A3C35)
 val surfaceContainerHighestDarkHighContrast = Color(0xFF454840)
-
-
-
-
-
-
-
