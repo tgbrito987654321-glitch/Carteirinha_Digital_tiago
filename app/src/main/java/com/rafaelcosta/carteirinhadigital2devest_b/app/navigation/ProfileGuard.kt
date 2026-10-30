@@ -8,8 +8,6 @@ import com.rafaelcosta.carteirinhadigital2devest_b.feature.login.domain.model.mo
 import com.rafaelcosta.carteirinhadigital2devest_b.feature.login.domain.model.model.UsuarioLogado
 import kotlinx.coroutines.flow.StateFlow
 
-class ProfileGuard {
-}
 @Composable
 internal fun ProfileGuard(
     usuarioFlow: StateFlow<UsuarioLogado?>,
@@ -30,7 +28,7 @@ internal fun ProfileGuard(
 
     if (usuarioAtual.perfil != perfilEsperado) {
         LaunchedEffect(usuarioAtual.perfil) {
-            onPerfilInvalido(usuarioAtual.perfil as PerfilAcesso as PerfilAcesso)
+            onPerfilInvalido(usuarioAtual.perfil)
         }
         return
     }

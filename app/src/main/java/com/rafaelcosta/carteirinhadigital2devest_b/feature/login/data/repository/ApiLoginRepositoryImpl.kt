@@ -1,4 +1,5 @@
 package com.rafaelcosta.carteirinhadigital2devest_b.feature.login.data.repository
+
 import com.rafaelcosta.carteirinhadigital2devest_b.feature.login.data.remote.dto.ErrorResponseDto
 import com.rafaelcosta.carteirinhadigital2devest_b.feature.login.data.remote.dto.LoginRequestDto
 import com.rafaelcosta.carteirinhadigital2devest_b.feature.login.data.remote.service.AuthApi
@@ -12,9 +13,11 @@ class ApiLoginRepositoryImpl(
     private val api: AuthApi
 ) : LoginRepository {
 
-    override suspend fun login(usuario: String, senha: String): Result<UsuarioLogado> {
+    private val json = Json { ignoreUnknownKeys = true }
+
+    override suspend fun login(login: String, senha: String): Result<UsuarioLogado> {
         return runCatching {
-            val response = api.login(LoginRequestDto(login = usuario, senha = senha))
+            val response = api.login(LoginRequestDto(login = login, senha = senha))
             UsuarioLogado(
                 id = response.id,
                 nome = response.nome,
@@ -44,7 +47,7 @@ class ApiLoginRepositoryImpl(
 
         val messageFromBody = exception.response()?.errorBody()?.string()?.let { body ->
             runCatching {
-                Json { ignoreUnknownKeys = true }.decodeFromString<ErrorResponseDto>(body).message
+                json.decodeFromString<ErrorResponseDto>(body).message
             }.getOrNull()
         }
 

@@ -19,8 +19,6 @@ import com.rafaelcosta.carteirinhadigital2devest_b.core.designsystem.theme.Carte
 import com.rafaelcosta.carteirinhadigital2devest_b.feature.login.domain.model.model.PerfilAcesso
 import com.rafaelcosta.carteirinhadigital2devest_b.feature.login.domain.model.model.UsuarioLogado
 
-class HomeProfessorScreen {
-}
 @Composable
 fun HomeProfessorScreen(
     usuarioLogado: UsuarioLogado,
@@ -32,8 +30,7 @@ fun HomeProfessorScreen(
         modifier = modifier
             .fillMaxSize()
             .padding(24.dp),
-        verticalArrangement =
-            Arrangement.spacedBy(24.dp)
+        verticalArrangement = Arrangement.spacedBy(24.dp)
     ) {
         Text(
             text = "Olá, ${usuarioLogado.nome}",

@@ -26,13 +26,11 @@ import com.rafaelcosta.carteirinhadigital2devest_b.core.designsystem.theme.Carte
 import com.rafaelcosta.carteirinhadigital2devest_b.feature.login.presentation.LoginEvent
 import com.rafaelcosta.carteirinhadigital2devest_b.feature.login.presentation.LoginUiState
 
-class LoginContent {
-}
 @Composable
 fun LoginContent(
     modifier: Modifier = Modifier,
     uiState: LoginUiState,
-    onEvent:(LoginEvent)-> Unit
+    onEvent: (LoginEvent) -> Unit
 ) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -40,7 +38,7 @@ fun LoginContent(
             10.dp,
             Alignment.CenterVertically
         ),
-        modifier =modifier
+        modifier = modifier
     ) {
         Text(
             text = "Login",
@@ -53,9 +51,9 @@ fun LoginContent(
                 onEvent(LoginEvent.OnUsuarioChange(it))
             },
             isError = uiState.credentialError,
-            label = {Text(text = "Usuario")
+            label = {
+                Text(text = "Usuário")
             }
-
         )
         TextField(
             value = uiState.senha,
@@ -63,7 +61,9 @@ fun LoginContent(
                 onEvent(LoginEvent.OnSenhaChange(it))
             },
             isError = uiState.credentialError,
-            label = {Text(text = "Senha")}
+            label = {
+                Text(text = "Senha")
+            }
         )
         uiState.errorMessage?.let { error ->
             Text(
@@ -89,7 +89,7 @@ fun LoginContent(
             modifier = Modifier
                 .fillMaxWidth(.6f)
         ) {
-            if(uiState.isLoading){
+            if (uiState.isLoading) {
                 LinearProgressIndicator(
                     modifier = Modifier
                         .fillMaxWidth(0.45f)
@@ -97,10 +97,10 @@ fun LoginContent(
                     color = Color.White,
                     trackColor = Color.White.copy(alpha = 0.35f)
                 )
-            }else{
+            } else {
                 Text(
                     "Entrar",
-                    color = Color.White,
+                    color = Color.White
                 )
             }
         }

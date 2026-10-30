@@ -9,10 +9,9 @@ import com.rafaelcosta.carteirinhadigital2devest_b.app.navigation.GraphRoutes
 import com.rafaelcosta.carteirinhadigital2devest_b.feature.login.domain.model.model.UsuarioLogado
 import com.rafaelcosta.carteirinhadigital2devest_b.feature.login.domain.model.repository.LoginRepository
 import com.rafaelcosta.carteirinhadigital2devest_b.feature.login.presentation.LoginViewModel
+import com.rafaelcosta.carteirinhadigital2devest_b.feature.login.presentation.factory.LoginViewModelFactory
 import com.rafaelcosta.carteirinhadigital2devest_b.feature.login.presentation.screen.LoginScreen
 
-class AuthNavGraph {
-}
 fun NavGraphBuilder.authNavGraph(
     loginRepository: LoginRepository,
     onLoginSucesso: (UsuarioLogado) -> Unit

@@ -13,6 +13,7 @@ import com.rafaelcosta.carteirinhadigital2devest_b.app.navigation.GraphRoutes
 import com.rafaelcosta.carteirinhadigital2devest_b.app.navigation.ProfileGuard
 import com.rafaelcosta.carteirinhadigital2devest_b.app.ui.AppShell
 import com.rafaelcosta.carteirinhadigital2devest_b.feature.aluno.carteirinha.presetantion.screen.CarteirinhaScreen
+import com.rafaelcosta.carteirinhadigital2devest_b.feature.aluno.home_aluno.presentation.screen.HomeAlunoScreen
 import com.rafaelcosta.carteirinhadigital2devest_b.feature.aluno.unidadecurriculares.domain.repository.UnidadeCurricularRepository
 import com.rafaelcosta.carteirinhadigital2devest_b.feature.aluno.unidadecurriculares.presentation.UnidadeCurricularViewModel
 import com.rafaelcosta.carteirinhadigital2devest_b.feature.aluno.unidadecurriculares.presentation.factory.UnidadeCurricularViewModelFactory
@@ -21,8 +22,6 @@ import com.rafaelcosta.carteirinhadigital2devest_b.feature.login.domain.model.mo
 import com.rafaelcosta.carteirinhadigital2devest_b.feature.login.domain.model.model.UsuarioLogado
 import kotlinx.coroutines.flow.StateFlow
 
-class AlunoNavGraph {
-}
 fun NavGraphBuilder.alunoNavGraph(
     navController: NavHostController,
     usuarioLogadoFlow: StateFlow<UsuarioLogado?>,

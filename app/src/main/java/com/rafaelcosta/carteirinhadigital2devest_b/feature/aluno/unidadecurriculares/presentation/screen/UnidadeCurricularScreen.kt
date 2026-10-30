@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
@@ -15,34 +16,31 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.lifecycle.viewmodel.compose.viewModel
-import com.rafaelcosta.carteirinhadigital2devest_b.feature.unidadecurriculares.presentation.UnidadeCurricularViewModel
-import com.rafaelcosta.carteirinhadigital2devest_b.feature.unidadecurriculares.presentation.component.UnidadeCurricularCard
-
+import com.rafaelcosta.carteirinhadigital2devest_b.feature.aluno.unidadecurriculares.presentation.UnidadeCurricularViewModel
+import com.rafaelcosta.carteirinhadigital2devest_b.feature.aluno.unidadecurriculares.presentation.component.UnidadeCurricularCard
 
 @Composable
 fun UnidadeCurricularScreen(
-    modifier: Modifier = Modifier,
-    viewModel: UnidadeCurricularViewModel = viewModel()
+    viewModel: UnidadeCurricularViewModel,
+    modifier: Modifier = Modifier
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val errorMessage = uiState.errorMessage
 
     LaunchedEffect(Unit) { viewModel.carregar() }
 
-    when{
-        uiState.isLoading ->{
+    when {
+        uiState.isLoading -> {
             Box(
-                modifier =modifier.fillMaxSize(),
+                modifier = modifier.fillMaxSize(),
                 contentAlignment = Alignment.Center
-            ){
+            ) {
                 CircularProgressIndicator()
             }
         }
-        errorMessage != null ->{
+        errorMessage != null -> {
             Column(
                 modifier = modifier
                     .fillMaxSize()
@@ -56,23 +54,23 @@ fun UnidadeCurricularScreen(
                 )
                 Button(
                     modifier = Modifier.padding(16.dp),
-                    onClick = { viewModel.carregar()}
+                    onClick = { viewModel.carregar() }
                 ) {
                     Text(text = "Tente Novamente")
                 }
             }
         }
-        uiState.listaUnidadesCurriculares.isEmpty() ->{
+        uiState.unidades.isEmpty() -> {
             Box(
-                modifier =modifier.fillMaxSize(),
+                modifier = modifier.fillMaxSize(),
                 contentAlignment = Alignment.Center
-            ){
+            ) {
                 Text(text = "Nenhuma unidade curricular encontrada.")
             }
         }
         else -> {
             LazyColumn(
-                modifier = Modifier
+                modifier = modifier
                     .fillMaxSize()
                     .padding(
                         horizontal = 16.dp,
@@ -80,18 +78,10 @@ fun UnidadeCurricularScreen(
                     ),
                 verticalArrangement = Arrangement.spacedBy(12.dp)
             ) {
-                items(uiState.listaUnidadesCurriculares) { unidadeCurricular ->
+                items(uiState.unidades) { unidadeCurricular ->
                     UnidadeCurricularCard(unidadeCurricular = unidadeCurricular)
                 }
             }
         }
     }
-}
-@Preview(
-    showBackground = true,
-    showSystemUi = true
-)
-@Composable
-fun UnidadeCurricularScreenPreview() {
-    UnidadeCurricularScreen()
 }

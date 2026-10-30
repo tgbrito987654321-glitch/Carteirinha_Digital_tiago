@@ -16,8 +16,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.rafaelcosta.carteirinhadigital2devest_b.R
 import com.rafaelcosta.carteirinhadigital2devest_b.feature.aluno.carteirinha.presetantion.component.PerfilAluno
+import com.rafaelcosta.carteirinhadigital2devest_b.feature.aluno.carteirinha.presetantion.component.QrCode
 import com.rafaelcosta.carteirinhadigital2devest_b.feature.login.domain.model.model.UsuarioLogado
-import com.rafaelcosta.myapplication.QrCode
 
 @Composable
 fun CarteirinhaScreen(
@@ -54,7 +54,7 @@ fun CarteirinhaScreen(
             )
 
             PerfilAluno(
-                nome = usuarioLogado.nome as String,
+                nome = usuarioLogado.nome,
                 matricula = usuarioLogado.matricula,
                 curso = usuarioLogado.curso
             )
