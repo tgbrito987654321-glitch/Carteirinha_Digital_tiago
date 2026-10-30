@@ -1,5 +1,6 @@
 package com.rafaelcosta.carteirinhadigital2devest_b.feature.aluno.unidadecurriculares.data
 
+import com.rafaelcosta.carteirinhadigital2devest_b.feature.aluno.unidadecurriculares.domain.model.UnidadeCurricular
 import com.rafaelcosta.carteirinhadigital2devest_b.feature.unidadecurriculares.domain.model.UnidadeCurricular
 
 fun dataSource (): List<UnidadeCurricular> {

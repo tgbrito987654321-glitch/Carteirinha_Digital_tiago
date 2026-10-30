@@ -2,6 +2,7 @@ package com.rafaelcosta.carteirinhadigital2devest_b.app.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.rafaelcosta.carteirinhadigital2devest_b.feature.login.domain.model.model.PerfilAcesso
 import com.rafaelcosta.carteirinhadigital2devest_b.feature.login.domain.model.model.UsuarioLogado
@@ -29,7 +30,7 @@ internal fun ProfileGuard(
 
     if (usuarioAtual.perfil != perfilEsperado) {
         LaunchedEffect(usuarioAtual.perfil) {
-            onPerfilInvalido(usuarioAtual.perfil)
+            onPerfilInvalido(usuarioAtual.perfil as PerfilAcesso as PerfilAcesso)
         }
         return
     }

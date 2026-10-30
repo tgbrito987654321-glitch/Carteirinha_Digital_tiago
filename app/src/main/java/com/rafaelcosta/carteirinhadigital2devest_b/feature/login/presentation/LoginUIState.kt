@@ -1,5 +1,7 @@
 package com.rafaelcosta.carteirinhadigital2devest_b.feature.login.presentation
 
+import com.rafaelcosta.carteirinhadigital2devest_b.feature.login.domain.model.model.UsuarioLogado
+
 
 data class LoginUiState(
     val usuario: String = "",

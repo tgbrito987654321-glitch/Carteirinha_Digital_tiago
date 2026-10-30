@@ -29,6 +29,7 @@ fun AppNavHost(
         factory = sessionFactory
     )
 
+
     fun graphFor(perfil: PerfilAcesso): String {
         return when (perfil) {
             PerfilAcesso.ALUNO -> GraphRoutes.ALUNO
@@ -84,10 +85,7 @@ fun AppNavHost(
                 )
             },
             onPerfilInvalido = { perfil ->
-                replaceGraph(
-                    currentGraph = GraphRoutes.ALUNO,
-                    destinationGraph = graphFor(perfil)
-                )
+                replaceGraph(currentGraph = GraphRoutes.ALUNO, destinationGraph = graphFor(perfil))
             }
         )
 

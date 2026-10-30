@@ -1,6 +1,8 @@
 package com.rafaelcosta.carteirinhadigital2devest_b.feature.login.domain.model.model
 
-class UsuarioLogado {
+class UsuarioLogado(id: String, nome: String, curso: String, turma: String) {
+    val perfil: Any
+
     data class UsuarioLogado(
         val id: String,
         val nome: String,

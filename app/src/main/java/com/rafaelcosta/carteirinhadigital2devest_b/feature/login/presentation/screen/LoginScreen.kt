@@ -29,6 +29,7 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
+import com.rafaelcosta.carteirinhadigital2devest_b.feature.login.domain.model.model.UsuarioLogado
 import com.rafaelcosta.carteirinhadigital2devest_b.feature.login.presentation.LoginEvent
 import com.rafaelcosta.carteirinhadigital2devest_b.feature.login.presentation.LoginViewModel
 
