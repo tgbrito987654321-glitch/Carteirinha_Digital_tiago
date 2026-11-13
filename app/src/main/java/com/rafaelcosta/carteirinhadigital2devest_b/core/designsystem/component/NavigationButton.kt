@@ -1,6 +1,5 @@
 package com.rafaelcosta.carteirinhadigital2devest_b.core.designsystem.component
 
-import android.widget.Button
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
@@ -10,8 +9,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
-class NavigationButton {
-}
 @Composable
 fun NavigationButton(
     text: String,
@@ -24,9 +21,13 @@ fun NavigationButton(
         shape = RoundedCornerShape(4.dp),
         border = BorderStroke(
             width = 2.dp,
-            color = MaterialTheme.colorScheme.secondary
+            color = MaterialTheme.colorScheme.primary
         )
     ) {
-        Text(text = text)
+        Text(
+            text = text,
+            color = MaterialTheme.colorScheme.primary
+
+        )
     }
 }

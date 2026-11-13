@@ -112,7 +112,6 @@ fun LoginContent(
 private fun LoginContentPreview() {
     CarteirinhaDigital2DEVESTTheme {
         LoginContent(
-            modifier = Modifier.fillMaxSize(),
             uiState = LoginUiState(
                 usuario = "aluno",
                 senha = "123"
